@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+   padding-top: 10px; 
+ height: 100vh;
+  }
+body{
+  background-image: url('D:\pvt\WebProject\DevConnect\dev-connect\src\bg1.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  height: 100vh;
+  padding: 0;
+  color: rgb(255, 255, 255);
+}
+ #root{
+  height: 100vh;
+} 
+
+button{
+  padding: 10px 10px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 500;
+}
+.btns{
+  background-color: rgb(207, 210, 210);
+  margin-right: 10px;
+  width : 110px;
+  color: rgb(3, 51, 83);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  box-shadow:  0 5px 15px rgba(178, 197, 216, 0.281);
+}
+.App h1{
+  color: rgb(158, 199, 243);
+}
+
+.App h3{
+  color: rgb(158, 199, 243);
+  padding : 10px 10px 5px 20px;   
+}
