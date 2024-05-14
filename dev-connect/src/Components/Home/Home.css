@@ -1,0 +1,20 @@
+#explore-btns,
+#logout {
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #f7eded;
+    margin: 5px;
+    text-decoration: none;
+    color: #171616;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.5s ease; /* Apply transition to all properties */
+}
+
+#explore-btns:hover,
+#logout:hover {
+    background-color: #a5d7fe;
+    color: #01050e;
+    padding: 8px;
+}
