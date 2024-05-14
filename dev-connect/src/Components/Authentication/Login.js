@@ -5,10 +5,10 @@ import './Login.css';
 import axios from "axios";
 import Home from '../Home/Home'; 
 
-const Login = ({ setShowLogin, setShowRegistration }) => {
+const Login = ({ setShowLogin, setShowRegistration, onLoginSuccess }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false); // New state variable to track login status
+   // const [loggedIn, setLoggedIn] = useState(false); // New state variable to track login status
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -18,8 +18,8 @@ const Login = ({ setShowLogin, setShowRegistration }) => {
             // Handle successful login (e.g., set user state or redirect)
             console.log('Login successful:', response.data);
             alert('Login successful!');
-           setLoggedIn(true); // Redirect to home page after successful login
-       
+          //setLoggedIn(true); // Redirect to home page after successful login
+            onLoginSuccess();
         } catch (error) {
             // Handle login error (e.g., display error message)
             console.error('Login failed:', error);
@@ -32,10 +32,10 @@ const Login = ({ setShowLogin, setShowRegistration }) => {
       };
     
    
-    // If user is logged in, redirect to Home component
-    if (loggedIn) {
-        return <Home />;
-    }
+    // // If user is logged in, redirect to Home component
+    // if (loggedIn) {
+    //     return <Home />;
+    // }
  
     return (
         <div className="Login-container">

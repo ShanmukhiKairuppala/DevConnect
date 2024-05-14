@@ -4,8 +4,8 @@ const Home = () => {
     return (
         <div>
             
-
-            <p>Hello, You have successfully logged in</p>
+<h1>Hello !!</h1>
+           
        </div>
     );
 };

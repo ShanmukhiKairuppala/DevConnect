@@ -3,6 +3,9 @@ import './App.css';
 import Login from './Components/Authentication/Login';
 import Registration from './Components/Authentication/Registration';
 import Home from './Components/Home/Home';
+import Welcome from './Components/WelcomeMsg/Welcome';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -26,38 +29,60 @@ function App() {
   };
 
   const handleLoginSuccess = () => {
+    
     setLoggedIn(true);
   };
-
+ 
   return (
+
+    // <div className="App">
+    //   {!loggedIn && (
+    //     <>
+    //       <h1 className='heading'>Welcome to Dev connect!</h1>
+    //       <h3 className='subheading'>Empowering Developers Globally: Learn, Connect, and Grow with Our Platform</h3>
+    //       {!showLogin && !showRegistration && (
+    //         <div>
+    //           <button className="btns" onClick={handleLoginButtonClick}>Login</button>
+    //           <button className="btns" onClick={handleRegistrationButtonClick}>Register</button>
+    //         </div>
+    //       )}
+    //       {showLogin && <Login setShowLogin={setShowLogin} setShowRegistration={setShowRegistration} onLoginSuccess={handleLoginSuccess}/>}
+    //       {showRegistration && <Registration setShowLogin={setShowLogin} setShowRegistration={setShowRegistration} onRegistrationSuccess={handleRegistrationSuccess} />}
+    //     </>
+    //   )}
+    //   {loggedIn && <Home />}
+    // </div>
+
+
     <div className="App">
-      <h1 className='heading'>Welcome to Dev connect!</h1>
-      
-      <h3 className='subheading'>Empowering Developers Globally: Learn, Connect, and Grow with Our Platform</h3>
-      
+      {!loggedIn && <Welcome />}
       {loggedIn ? (
         <Home />
       ) : (
-        <>
+         <>
+      {/*          <h1 className='heading'>Welcome to Dev connect!</h1>
+      
+       <h3 className='subheading'>Empowering Developers Globally: Learn, Connect, and Grow with Our Platform</h3> */}
+   
       {!showLogin && !showRegistration && (   // If neither showLogin nor showRegistration is true, display the following buttons
         <div>
           <button className="btns" onClick={handleLoginButtonClick}>Login</button>
           <button className="btns" onClick={handleRegistrationButtonClick}>Register</button>
         </div>
       )}
-      {showLogin && <Login setShowLogin={setShowLogin} setShowRegistration={setShowRegistration}  onLoginSuccess={handleLoginSuccess}/>} {/* If showLogin is true, display the Login component */}
-      {showRegistration && <Registration setShowLogin={setShowLogin} setShowRegistration={setShowRegistration} onRegistrationSuccess={handleRegistrationSuccess} />} {/* If showRegistration is true, display the Registration component */}
-      
+         {showLogin && <Login setShowLogin={setShowLogin} setShowRegistration={setShowRegistration}  onLoginSuccess={handleLoginSuccess}/>} {/* If showLogin is true, display the Login component */}
+{showRegistration && <Registration setShowLogin={setShowLogin}  setShowRegistration={setShowRegistration} onRegistrationSuccess={handleRegistrationSuccess} />} {/* If showRegistration is true, display the Registration component */}
+
       </>
       )}
     </div>
- 
+  
   );
-
-
-
-
 
 }
 
 export default App;
+
+//  {showLogin && <Login setShowLogin={setShowLogin} setShowRegistration={setShowRegistration} onLoginSuccess={handleLoginSuccess}/>}
+ 
+
