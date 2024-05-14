@@ -1,16 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './Components/Authentication/Login';
 import Registration from './Components/Authentication/Registration';
 import Home from './Components/Home/Home';
 import Welcome from './Components/WelcomeMsg/Welcome';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate  } from 'react-router-dom';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showRegistration, setShowRegistration] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+
+
+  useEffect(() => {
+    // Check if user is logged in when component mounts
+    const userLoggedIn = localStorage.getItem('loggedIn');
+    if (userLoggedIn) {
+      setLoggedIn(true);
+    }
+  }, []);
+
 
   const handleLoginButtonClick = () => {
     setShowLogin(true);
@@ -31,8 +41,18 @@ function App() {
   const handleLoginSuccess = () => {
     
     setLoggedIn(true);
+      // Store login status in local storage
+      localStorage.setItem('loggedIn', true);
   };
  
+  const handleLogout = () => {
+    // Clear logged-in status from local storage
+    localStorage.removeItem('loggedIn');
+    // Update logged-in state
+    setLoggedIn(false);
+  };
+
+
   return (
 
     // <div className="App">
@@ -57,7 +77,9 @@ function App() {
     <div className="App">
       {!loggedIn && <Welcome />}
       {loggedIn ? (
-        <Home />
+     
+       <Home onLogout={handleLogout} />
+      
       ) : (
          <>
       {/*          <h1 className='heading'>Welcome to Dev connect!</h1>
