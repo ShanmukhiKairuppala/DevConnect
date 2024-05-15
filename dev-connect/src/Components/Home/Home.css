@@ -1,20 +1,69 @@
-#explore-btns,
-#logout {
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  #logout {
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #f7eded;
+    height: 35px;
+
+    text-decoration: none;
+    color: #171616;
+    font-size: 1rem;
+    font-weight: 550;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+  }
+  
+  #logout:hover {
+    background-color: #041738;
+    color: #f6f8fb;
+    padding: 8px;
+  }
+  
+  /* .explore-section {
+    margin-top: 5px;
+  }
+   */
+  #explore-btns {
     padding: 5px;
     box-sizing: border-box;
     border: 1px solid #f7eded;
     margin: 5px;
     text-decoration: none;
-    color: #171616;
-    font-size: 1.2rem;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.5s ease; /* Apply transition to all properties */
-}
-
-#explore-btns:hover,
-#logout:hover {
-    background-color: #a5d7fe;
-    color: #01050e;
+    color: #123b92;
+    font-size: 1rem;
+    font-weight: 550;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+  }
+  
+  #explore-btns:hover {
+    background-color: #041a40;
+    color: #9bbef3;
     padding: 8px;
-}
+  }
+  
+  #hello{
+    color: #6dc4f6;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px;
+  }
+
+  #exp{
+    color: #a5d9f7;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px;
+  }

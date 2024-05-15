@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import './Home.css';
+import styles from "./Home.module.css";
 import UserProfile from "../Profile/userProfile";
 import Dashboard from "../Dashboard/Dashboard";
 import Jobs from "../JobSearch/Jobs";
 import UserRecommendation from "../Recomendation/UserRecommendation";
 import Chat from "../Chat/Chat";
-
 
 const Home = ({ onLogout }) => {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -15,32 +14,35 @@ const Home = ({ onLogout }) => {
   };
 
   return (
-    <div>
-      <h1>Hello !!</h1>
-      <button id = "logout" onClick={onLogout}>Logout</button>
-      <div>
-            <h2>Explore more...</h2>
-            {/* <a href="/profile">Profile</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/jobs">Job Search</a>
-            <a href="/userRecommendation">User Recommendation</a>
-            <a href="/chat">Chat</a> */}
+    <div className={styles.homeContainer}>
+      <div className={styles.header}>
+        <h3 className={styles.hello}>Hello and Welcome to DevConnect!</h3>
+        <button  className={styles.logout} onClick={onLogout}>Logout </button>
+      </div>
+      <div className={styles.exploreSection}>
 
-<button id = "explore-btns" onClick={() => handleButtonClick("Profile")}>Profile</button>
-        <button id = "explore-btns" onClick={() => handleButtonClick("Dashboard")}>Dashboard</button>
-        <button id = "explore-btns" onClick={() => handleButtonClick("Jobs")}>Job Search</button>
-        <button id = "explore-btns" onClick={() => handleButtonClick("UserRecommendation")}>User Recommendation</button>
-        <button id = "explore-btns" onClick={() => handleButtonClick("Chat")}>Chat</button>
-          </div>
-          
-      <div className="component-container">
+      <div className={styles.leftSection}>
+ 
+        <h3  className={styles.exp}>Explore more...</h3>
+      
+        <div className={styles.buttonContainer}>
+          <button  className={styles.exploreBtns} onClick={() => handleButtonClick("Profile")}> Profile</button>
+          <button  className={styles.exploreBtns} onClick={() => handleButtonClick("Dashboard")}>Dashboard</button>
+          <button  className={styles.exploreBtns} onClick={() => handleButtonClick("Jobs")}>Job Search</button>
+          <button  className={styles.exploreBtns} onClick={() => handleButtonClick("UserRecommendation")}>User Recommendation </button>
+          <button  className={styles.exploreBtns} onClick={() => handleButtonClick("Chat")}>Chat</button>
+        </div>
+        </div>
+        <div className={styles.rightSection}>
+      <div className={styles.componentContainer}>
         {activeComponent === "Profile" && <UserProfile />}
         {activeComponent === "Dashboard" && <Dashboard />}
         {activeComponent === "Jobs" && <Jobs />}
         {activeComponent === "UserRecommendation" && <UserRecommendation />}
         {activeComponent === "Chat" && <Chat />}
       </div>
-
+      </div>
+      </div>
     </div>
   );
 };

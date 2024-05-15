@@ -88,7 +88,7 @@ function App() {
         <>
           {!showLogin &&
             !showRegistration && ( // If neither showLogin nor showRegistration is true, display the following buttons
-              <div>
+              <div >
                 <button className="btns" onClick={handleLoginButtonClick}>
                   Login
                 </button>
