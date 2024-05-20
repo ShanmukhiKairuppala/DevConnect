@@ -1,0 +1,128 @@
+.main{
+    /* background-color: rgb(201, 205, 208); */
+    height : 80vh;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+
+}
+
+.heading{
+    color:rgb(199, 222, 235);
+    font-size: 25px;    
+    font-family: sans-serif ;
+}
+select{
+    background-color: rgb(206, 211, 214);
+    width:180px;
+    height: auto;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(1, 12, 16);
+    margin-right: 15px;
+    padding: 8px 2px 8px 2px;
+    border-radius: 5px;
+    border: 1px solid rgb(188, 227, 247);;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search{
+    background-color:  #69b1f3;
+    width: 100px;
+    height: auto;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: 540;
+    padding: 8px 8px 8px 8px;
+    border-radius: 5px;
+    /* border: 1px solid rgb(23, 24, 24); */
+    box-sizing: border-box;
+    /* box-shadow: 0 0 5px 0 rgb(87, 92, 92); */
+    cursor: pointer;
+    transition: all 0.3s ease ;
+}
+
+.search:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+} 
+
+.select:focus:not([value=""])  {
+    background-color: #090f14;
+    border-color: #69b1f3;
+    color: #e0e4e7;
+    outline: none;
+    
+}
+
+
+
+.jobList {
+   color: #83c5fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    height: 400px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* border: 1px solid #ccc;  */
+    padding: 10px; /* Optional: Add padding for better spacing */
+    scroll-behavior: smooth;
+}
+
+.jobCard {
+    background-color: #011039;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width:80%;
+}
+
+.labels{
+    color: #e0e4e7;
+    font-size: 18px;
+    font-weight: 520;
+    font-family: sans-serif;
+    margin-right: 15px;
+    box-sizing: border-box;
+    padding : 6px;
+}
+/* Custom scrollbar styles */
+.jobList::-webkit-scrollbar {
+    width: 15px; /* Width of the scrollbar */
+  
+}
+
+.jobList::-webkit-scrollbar-track {
+   /* Track color */
+   border: 1px solid #ccc;
+    border-radius: 10px;
+    
+}
+
+.jobList::-webkit-scrollbar-thumb {
+    background: #3b98f6; /* Scrollbar color */
+    border-radius: 10px;
+}
+
+.jobList::-webkit-scrollbar-thumb:hover {
+    background: #f2fbfb; /* Scrollbar color on hover */
+}
+
+.link{
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 520;
+    transition: all 0.3s ease;
+
+}
+.link:hover{
+    font-size: 16px;
+    text-decoration: underline;
+    
+}

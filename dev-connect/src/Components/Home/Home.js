@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Home.module.css";
-import UserProfile from "../Profile/userProfile";
+
 import Dashboard from "../Dashboard/Dashboard";
 import Jobs from "../JobSearch/Jobs";
 import UserRecommendation from "../Recomendation/UserRecommendation";
 import Chat from "../Chat/Chat";
+
+import User_Profile from "../Profile/User_Profile";
 
 const Home = ({ onLogout }) => {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -35,7 +37,7 @@ const Home = ({ onLogout }) => {
         </div>
         <div className={styles.rightSection}>
       <div className={styles.componentContainer}>
-        {activeComponent === "Profile" && <UserProfile />}
+        {activeComponent === "Profile" && <User_Profile />}
         {activeComponent === "Dashboard" && <Dashboard />}
         {activeComponent === "Jobs" && <Jobs />}
         {activeComponent === "UserRecommendation" && <UserRecommendation />}

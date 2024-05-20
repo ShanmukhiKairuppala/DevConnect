@@ -8,12 +8,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    padding :20px;
+    padding :20px 20px 0px 20px;
 }
 
 .hello {
     color: #5fbcf1;
-    font-size: 1.5rem;
+   font-size: 30px;
     font-weight: 600;
     margin:0;
 }
@@ -88,7 +88,7 @@
     
 }
 .componentContainer {
-    padding: 20px;
+    /* padding: 20px; */
     box-sizing: border-box;
     
 }
